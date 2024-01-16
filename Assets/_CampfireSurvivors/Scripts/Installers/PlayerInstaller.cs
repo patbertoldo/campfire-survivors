@@ -1,9 +1,18 @@
+using System;
 using UnityEngine;
 using Zenject;
+using CampfireSurvivors.Player.Movement;
 
-public class PlayerInstaller : MonoInstaller
+namespace CampfireSurvivors.Installers
 {
-    public override void InstallBindings()
+    public class PlayerInstaller : MonoInstaller
     {
+        [SerializeField]
+        PlayerMovementSettings playerMovementSettings = null;
+
+        public override void InstallBindings()
+        {
+            Container.BindInterfacesAndSelfTo<PlayerMovementPC>().AsSingle().WithArguments(playerMovementSettings);
+        }
     }
 }
