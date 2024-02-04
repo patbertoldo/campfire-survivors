@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace CampfireSurvivors
+namespace CampfireSurvivors.Installers
 {
     [CreateAssetMenu(fileName = "GameSettingsInstaller", menuName = "Installers/GameSettingsInstaller")]
     public class GameSettingsInstaller : ScriptableObjectInstaller<GameSettingsInstaller>
